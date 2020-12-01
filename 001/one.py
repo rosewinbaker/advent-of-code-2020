@@ -21,15 +21,15 @@ while (i<(len(inputList) + 1)):
         i = 0
         anchor += 1
         # print "New anchor: " + str(anchor)
-    val1 = inputList[anchor]
-    val2 = inputList[i]
-    sum = int(inputList[anchor]) + int(inputList[i])
+    val1 = int(inputList[anchor])
+    val2 = int(inputList[i])
+    sum = val1 + val2
     # print str(inputList[anchor]) + " + " + str(inputList[i]) + " = " + str(sum)
     i += 1
     if sum == goal:
         print "Hey, we found " + str(goal)
-        print val1 + " + " + val2 + " = " + str(sum)
+        print str(val1) + " + " + str(val2) + " = " + str(sum)
         break
 
 final_answer = int(val1) * int(val2)
-print val1 + " * " + val2 + " = " + str(final_answer)
+print str(val1) + " * " + str(val2) + " = " + str(final_answer)
