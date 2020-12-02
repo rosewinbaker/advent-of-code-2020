@@ -4,7 +4,6 @@ f = open('input.txt')
 inputList = []
 for line in f:
     value = line.split()
-    
     i=0
     while (i<3):
         clean = re.split('\-|:|\*|\n',value[i])
@@ -21,14 +20,14 @@ while (j<len(inputList)):
     letter = inputList[j+1][0]
     phrase = inputList[j+2][0]
 
-    # print(letter + " " + phrase)
-
     if letter in phrase:
-        # print("found the letter")
-        count = phrase.count(letter)
-        # print(count)
-        if range1 <= count <= range2:
-            # print("Letter " + letter + " found in range " + str(range1) + "-" + str(range2) + ": " + phrase)
+
+        foo = ([pos for pos, char in enumerate(phrase) if char == letter])
+        newfoo = [x+1 for x in foo]
+
+        if (range1 in newfoo) != (range2 in newfoo):
+            # print(newfoo)
+            # print(letter + " in " + phrase + " " + str(range1) + " or " + str(range2))
             valid += 1
 
     j += 3
