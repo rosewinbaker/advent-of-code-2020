@@ -17,20 +17,18 @@ f.close()
 
 # print(lines[0])
 
-tree=0
 trees = []
 total_trees = []
 line_pos = 1
 i=1
 
-def find_tree(terrain, line_pos, trees, tree):
+def find_tree(terrain, line_pos, trees):
     foo = ([pos for pos, char in enumerate(terrain) if char == '#'])
     newfoo = [x+1 for x in foo]
     # print(newfoo)
 
     if line_pos in newfoo:
         # print("We found a tree at line position " + str(line_pos) + " on line " + str(i))
-        tree += 1
         trees.append(i)
 
 
@@ -59,7 +57,7 @@ while (j<len(my_slopes)):
         # print("Line # " + str(i) + " + pos # " + str(line_pos))
 
 
-        find_tree(terrain, line_pos, trees, tree)
+        find_tree(terrain, line_pos, trees)
 
         if line_pos >= (terrain_length - (right - 1)):
 
