@@ -68,7 +68,6 @@ while (j<len(my_slopes)):
 
     
     print("Total trees encountered: " + str(len(trees)))
-    tree = len(trees)
     total_trees.append(len(trees))
     # print(total_trees)
     trees.clear()
