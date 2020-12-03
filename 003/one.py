@@ -74,8 +74,6 @@ while (j<len(my_slopes)):
     trees.clear()
     i=1
     line_pos = 1
-    # line
-    
 
 def multiplyList(myList) :
      
