@@ -1,18 +1,12 @@
-import math
-import re
 
 lines = []
-
 f = open('input.txt') 
 inputList = []
 for line in f:
     value = line.split()
-    # print(value[0] * 2)
 
     lines.append(value[0])
     line = value[0]
-    foo = ([pos for pos, char in enumerate(line) if char == '#'])
-    # print(foo)
 f.close()
 
 # print(lines[0])
@@ -45,7 +39,7 @@ while (j<len(my_slopes)):
     # print("Lines: " + str(len(lines)))
 
     # print("i #: " + str(i))
-    
+
     i=1
     while (i<len(lines)):                                                                                                                                                              
 
