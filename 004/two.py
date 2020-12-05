@@ -33,14 +33,14 @@ for passport in clean_passports:
         valid_length.append(clean_passports[k])
     k += 1
 
-print("# of clean passports with valid length and only mising cid: " + str(len(valid_length)))
+
+print("Passports with valid length or only mising cid: " + str(len(valid_length)))
 
 j=0
-for items in valid_length:
+for items in clean_passports:
 
 # Check for valid birth year 
     if "byr" in clean_passports[j]:
-        # print("Found a birth year field" )
         if 1920 <= int(clean_passports[j]['byr']) <= 2002:
             # print("byr between 1920 and 2002: " + str(clean_passports[j]['byr']))
             total_valid_points += 1
@@ -129,9 +129,9 @@ for items in valid_length:
     # print("Totally valid thoooo: " + str(total_valid_points))    
     if total_valid_points >= 7:
         but_like_actually_valid += 1
-        # print("But like actually valid: " + str(but_like_actually_valid))
+        # print("But like actually valid on line " + str(j) + ": " + str(but_like_actually_valid))
     total_valid_points = 0
     j += 1
 
-
+# print(valid_length[-1])
 print("Total valid number: " + str(but_like_actually_valid))
