@@ -27,6 +27,9 @@ unique_group_chars = 0
 blank_lines = []
 group_letters = []
 unique_group_answers = []
+all_said_yes_list = []
+group_counter = -1
+yas = []
 
 i=0
 # while (i<6):
@@ -42,13 +45,27 @@ while (i<len(answers)):
             # print(line_answer)
             j += 1
     elif unique_line_chars == 0:
+        group_counter += 1
         # print("This is a blank line / a new group")
         blank_lines.append(i)
         blank_lines.sort()
         if (len(blank_lines) > 1):
             group_size = (blank_lines[-1] - blank_lines[-2]) - 1
-            # print("# of entries since last blank line: " + str(group_size))
+            # print("Group #" + str(group_counter) + " size: " + str(group_size))
 
+        k=0
+        while (k<len(group_letters)):
+            group_count = group_letters.count(group_letters[k])
+            if group_size == group_letters.count(group_letters[k]):
+                # print("Everyone said yes to: " + group_letters[k])
+                yas.append(group_letters[k])
+                all_said_yes += 1
+            k += 1
+
+        # print("Adding all_said_yes: " + str(len(list(set(yas)))))  
+        all_said_yes_list.append(len(list(set(yas))))
+        all_said_yes = 0
+        yas.clear()
         unique_answers = len(list(set(group_letters)))
         unique_group_answers.append(unique_answers)
         group_letters.clear()
@@ -63,3 +80,4 @@ def addList(unique_group_answers) :
     return result 
      
 print("Total questions answered yes: " + str(addList(unique_group_answers)))
+print("Questions everyone in group answered yes: " + str(addList(all_said_yes_list)))
