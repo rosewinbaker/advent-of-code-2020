@@ -43,7 +43,6 @@ while (i<len(answers)):
             if group_size == group_letters.count(group_letters[k]):
                 # print("Everyone said yes to: " + group_letters[k])
                 yas.append(group_letters[k])
-                all_said_yes += 1
             k += 1
 
         # print("Adding all_said_yes: " + str(len(list(set(yas)))))  
