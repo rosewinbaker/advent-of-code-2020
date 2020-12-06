@@ -1,19 +1,3 @@
-'''
-split on \n\n
-
-total count = 0
-
-loop through split vals:
-    for chars in splitval[i]:
-        count unique characters
-    if line is blank:
-        compare how many unique in lines since last blank line
-        add to total count variable
-    restart the count
-
-print final answer: total count
-'''
-
 answers = []
 with open('input.txt') as f:
     for line in f:
@@ -72,8 +56,6 @@ while (i<len(answers)):
     i += 1
 
 def addList(unique_group_answers) :
-     
-    # Multiply elements one by one
     result = 0
     for x in unique_group_answers:
          result = result + x 
