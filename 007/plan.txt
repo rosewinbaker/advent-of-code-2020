@@ -1,0 +1,31 @@
+
+test_list = [
+    [
+        {'name': 'light_red'},
+        {'contents': [
+            {'bright_white': 1},
+            {'muted_yellow': 2}
+        ]
+        }
+    ],
+    [
+        {'name': 'dark_orange'},
+        {'contents': [
+            {'bright_white': 3},
+            {'muted_yellow': 4}
+        ]}
+    ]
+]
+
+# print(test_list[0][0]['name'] + " contents: ")
+# print(test_list[0][1]['contents'])
+
+
+Recursive function:
+
+name = bag_registry[k][0]['name']
+Find 'name' in bag_registry[k][0]['name']
+for length of contents in bag_name:
+    Add ['contents'] to list of bag carriers
+    For entries in bag carriers:
+        name = bag_carrier[0] ++ 

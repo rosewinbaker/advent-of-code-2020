@@ -100,9 +100,14 @@ seat_ids.sort(reverse=True)
 print("Highest seat ID: " + str(seat_ids[0]))
 
 rows.sort()
-print("Lowest row: " + str(rows[0]))
-rows.sort(reverse=True)
-print("Highest row: " + str(rows[0]))
+lowest_row = rows[0]
+highest_row = rows[-1]
+print("Lowest row: " + str(lowest_row))
+print("Highest row: " + str(highest_row))
+# print("Lowest row: " + str(rows[0]))
+# rows.sort(reverse=True)
+# highest_row = rows[0]
+# print("Highest row: " + str(rows[0]))
 
 col_lengths = {}
 col_lengths[0] = len(col0)
@@ -118,10 +123,18 @@ col_lengths[7] = len(col7)
 col_lengths = sorted(col_lengths, key=col_lengths.get)
 print("My seat column: " + str(col_lengths[0]))
 
-# col5.sort()
-# k=4
-# for seats in col5:
-#     print(col5[k-4])
-#     # if col5[k-4] != k:
-#     #     print(str(col5[k-4]) + " does not equal " + str(k))
-#     k += 1
+
+## Here I've included col5 after checking for my column in above function ^
+## Will return to make this more dynamic. 
+
+col5.sort()
+k=4
+for seats in col5:
+    # print(col5[k-4])
+    if col5[k-4] != k and k != lowest_row and k != highest_row:
+        print("Found our seat row number: " + str(k))
+        break
+    k += 1
+
+my_seat_id = k * 8 + col_lengths[0]
+print("My seat id: " + str(my_seat_id))
