@@ -1,12 +1,13 @@
 input = []
-with open('input.txt') as f:
+with open('sample-input.txt') as f:
     for line in f:
         value = line.split()
         input.append(value)
 f.close()
 
-lines_visited = []
+lines_visited = {}
 
+changed_tried = 0
 accumulator = 0
 i=0
 for items in input:
@@ -15,7 +16,7 @@ for items in input:
     number = input[i][1][1:]
     both = input[i][1]
     # print("Line #" + str(i) + ": " + instruction + " " + modifier + number)
-    lines_visited.append(i)
+    lines_visited[i] = True
     # print(lines_visited)
 
 
@@ -23,12 +24,6 @@ for items in input:
     if instruction == 'acc':
         # print("Accumulate: " + modifier + number)
         accumulator += int(both)
-
-        # if modifier == "+":
-        #     accumulator += int(number)
-        # elif modifier == "-":
-        #     accumulator -= int(number)
-        # print("New accumulator number: " + str(accumulator))
         i += 1
         if i in lines_visited:
             print("Hey, we've done that before. Stop that.")
@@ -48,3 +43,6 @@ for items in input:
             print("Hey, we've done that before. Stop that.")
             print("Accumulator number: " + str(accumulator))
             break
+
+
+print("Last line visited: " + str(i))

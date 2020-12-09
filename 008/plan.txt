@@ -1,0 +1,24 @@
+
+been_iterated = 0
+
+acc_temp = 0
+i_temp = 0
+lines_visited = {}
+
+i = 0
+while (i < input length)
+    if item is nop or jmp and been_iterated = 0 and i> acc_temp:
+        try nop = jmp
+        been_iterated = 1
+        i_temp = i
+        acc_temp = accumulator
+    else continue as expected
+
+    if i in lines visited:
+        go back an i version i = i_temp
+        accumulator = acc_temp
+        change that i version back nop = jmp
+        been_iterated = 0
+    contiue with original instructions
+
+print Final accumlator after x lines
